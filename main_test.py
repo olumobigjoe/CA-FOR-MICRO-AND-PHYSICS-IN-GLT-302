@@ -108,12 +108,12 @@ if st.session_state.page == 'login':
         app_num = st.text_input("Application Number (Last 4-Digits)", max_chars=4)
         dept = st.selectbox("Department", ["", "Microbiology Morning", "Microbiology Evening", "Physics"])
         
-        #if st.button("Start TEST"):
-            #if not name or len(app_num) != 4 or not app_num.isdigit() or not dept:
+        if st.button("Start TEST"):
+            if not name or len(app_num) != 4 or not app_num.isdigit() or not dept:
                         st.error("Please provide your name, Last 4-digit ID, and select your department.")
-           # elif has_submitted(name, app_num):
+            elif has_submitted(name, app_num):
                 st.warning(f"Submission found for {name} ({app_num}). Access denied.")
-            #else:
+            else:
                 st.session_state.student_name = name
                 st.session_state.student_id = app_num
                 st.session_state.dept = dept
