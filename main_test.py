@@ -110,7 +110,7 @@ if st.session_state.page == 'login':
         
         if st.button("Start TEST"):
             if not name or len(app_num) != 4 or not app_num.isdigit() or not dept:
-                ]        st.error("Please provide your name, Last 4-digit ID, and select your department.")
+                        st.error("Please provide your name, Last 4-digit ID, and select your department.")
             elif has_submitted(name, app_num):
                 st.warning(f"Submission found for {name} ({app_num}). Access denied.")
             else:
